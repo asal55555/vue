@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <form @submit.prevent="addNote">
+            <input type="text" placeholder="" v-model="text">
+            <select v-model="game">
+            <option>csgo</option>
+            <option>dota</option>
+            <option>pubg</option>
+            </select>
+            <button @click="addGamer">Добавить игрока</button>
+            <p>Колличество заметок - {{ getListLength }}</p>
+        </form>
+<div class="gamers">
+    <div class="gamers__items">
+    
+        <ul class="gamers__item--list" >
+            <h2>Csgo</h2>
+            <li v-for="item in csgo"> {{ item.name }}</li>
+        </ul>
+    </div>
+        <div class="gamers__items">
+            <ul class="gamers__item--list" >
+                <h2>Dota</h2>
+                <li v-for="item in dota"> {{ item.name }}</li>
+            </ul>
+        </div>
+        <div class="gamers__items">
+    
+        <ul class="gamers__item--list" >
+            <h2>Pubg</h2>
+            <li v-for="item in pubg"> {{ item.name }}</li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
